@@ -40,14 +40,10 @@ class BitcoinConnection(object):
     - *host* -- Bitcoin JSON-RPC host.
     - *port* -- Bitcoin JSON-RPC port.
     """
-    def __init__(self, user, password, host='localhost', port=8332,
-                 use_https=False):
+    def __init__(self, url):
         """
         Create a new bitcoin server connection.
         """
-        url = 'http{s}://{user}:{password}@{host}:{port}/'.format(
-            s='s' if use_https else '',
-            user=user, password=password, host=host, port=port)
         self.url = url
         self.proxy = AuthServiceProxy(url, exception_wrapper=wrap_exception)
 
