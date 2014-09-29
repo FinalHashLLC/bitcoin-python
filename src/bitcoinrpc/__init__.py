@@ -54,4 +54,4 @@ def connect_to_remote(user, password, host='localhost', port=8332,
     """
     from bitcoinrpc.connection import BitcoinConnection
 
-    return BitcoinConnection(user, password, host, port, use_https)
+    return BitcoinConnection(url)
